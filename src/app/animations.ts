@@ -1,4 +1,4 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import { animate, group, keyframes, state, style, transition, trigger } from '@angular/animations';
 
 export const highlightedStateTrigger = trigger('highlightedState', [
   state('default', style({
@@ -41,3 +41,81 @@ export const checkButtonTrigger = trigger('checkButton', [
     }))
   ])
 ])
+
+export const filterTrigger = trigger('filterAnimation', [
+  transition(':enter', [
+    style({opacity:0, width: 0}),
+    animate('400ms ease-out', keyframes([
+      style({offset: 0, opacity:0, width:0}),
+      style({offset: 0.5, opacity:0.5, width:'*', backgroundColor: 'lightgreen'}),
+      style({offset: 1, opacity:1, width:'*', backgroundColor: 'lightblue'})
+    ]))
+  ]),
+  transition(':leave', [
+    animate('400ms ease-out', style({ opacity: 0, width: 0}))
+  ])
+])
+
+export const formButtonTrigger = trigger('formButton', [
+  transition('invalid => valid',[
+    group([
+      animate(200, style({
+        backgroundColor: '#63B77C'
+      })),
+      animate(100, style({
+        transform: 'scale(1.1)'
+      })),
+    ]),
+    animate(200, style({
+      transform: 'scale(1)'
+    }))
+  ]),
+
+  transition('valid => invalid',[
+    group([
+      animate(200, style({
+        backgroundColor: '#6C757D'
+      })),
+      animate(100, style({
+        transform: 'scale(1.1)'
+      })),
+    ]),
+    animate(200, style({
+      transform: 'scale(1)'
+    }))
+  ])
+])
+
+export const semTarefasTrigger = trigger('semTarefas',[
+  
+    transition(':enter', [
+      style({
+        width: '100%',
+        transform: 'translateX(-100%)',
+        opacity: 0
+      }),
+      group([
+        animate('0.3s 0.1s ease', style({
+          transform: 'translateX(0)',
+          width: '*'
+        })),
+        animate('0.3s ease', style({
+          opacity: 1
+        }))
+      ])
+    ]),
+    transition(':leave', [
+      group([
+        animate('0.3s ease', style({
+          transform: 'translateX(100%)',
+          width: '*'
+        })),
+        animate('0.3s 0.2s ease', style({
+          opacity: 0
+        }))
+      ])
+    ])
+    ])
+
+
+

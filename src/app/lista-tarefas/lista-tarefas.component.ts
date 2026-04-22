@@ -1,3 +1,4 @@
+import { filterTrigger, formButtonTrigger, semTarefasTrigger } from './../animations';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -13,7 +14,10 @@ import { checkButtonTrigger, highlightedStateTrigger, shownStateTrigger } from '
   animations: [
     highlightedStateTrigger,
     shownStateTrigger,
-    checkButtonTrigger
+    checkButtonTrigger,
+    filterTrigger,
+    formButtonTrigger,
+    semTarefasTrigger
   ]
 })
 export class ListaTarefasComponent implements OnInit {
