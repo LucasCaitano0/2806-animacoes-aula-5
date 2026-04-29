@@ -66,5 +66,6 @@ export class TarefaService {
 
   atualizarStatusTarefa(tarefa: Tarefa): void {
     tarefa.statusFinalizado = !tarefa.statusFinalizado;
+    this.editar(tarefa);
   }
 }
