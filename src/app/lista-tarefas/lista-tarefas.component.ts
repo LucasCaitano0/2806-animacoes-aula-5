@@ -82,7 +82,7 @@ export class ListaTarefasComponent implements OnInit {
   editarTarefa() {
     if(this.formulario.valid){
         const tarefaEditada = this.formulario.value
-        this.service.editar(tarefaEditada)
+        this.service.editar(tarefaEditada, true)
         this.resetarFormulario()
     }
     }

@@ -59,7 +59,7 @@
     {
       "id": 10,
       "descricao": "Estudar mais Angular",
-      "statusFinalizado": false,
+      "statusFinalizado": true,
       "categoria": "Estudos",
       "prioridade": "Alta"
     }
