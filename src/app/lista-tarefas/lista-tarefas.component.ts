@@ -6,6 +6,7 @@ import { TarefaService } from 'src/app/service/tarefa.service';
 import { Tarefa } from '../interface/tarefa';
 import { checkButtonTrigger, highlightedStateTrigger, shownStateTrigger } from '../animations';
 import { Subscription } from 'rxjs';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-lista-tarefas',
@@ -19,7 +20,7 @@ import { Subscription } from 'rxjs';
     formButtonTrigger,
     semTarefasTrigger,
     shakeTrigger,
-    listStateTrigger
+    listStateTrigger,
   ]
 })
 export class ListaTarefasComponent implements OnInit {
