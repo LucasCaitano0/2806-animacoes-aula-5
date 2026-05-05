@@ -77,7 +77,7 @@
     [(ngModel)]="campoBusca"
     (keyup)="filtrarTarefasPorDescricao(campoBusca)">
   </div>
-  <div *ngIf="tarefasFiltradas.length > 0, else semTarefas">
+  <div @listState *ngIf="tarefasFiltradas.length > 0, else semTarefas">
     <div
     @filterAnimation
       class="tarefas card-{{ tarefa.categoria }}"
@@ -98,7 +98,7 @@
           <button
             [ngClass]="(tarefa.statusFinalizado == true) ? 'icone-checked' : 'icone-unchecked'"
             (click)="finalizarTarefa(tarefa)"
-            [@checkButton]="(tarefa.id === id ? 'checked' : 'unchecked')"
+            [@checkButton]="(tarefa.id === id && estadoBotao)"
             >
           </button>
         </p>
