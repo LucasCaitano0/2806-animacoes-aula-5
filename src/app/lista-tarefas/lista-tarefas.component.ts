@@ -21,6 +21,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     semTarefasTrigger,
     shakeTrigger,
     listStateTrigger,
+    //NoopAnimationsModule (Desativa as animações, útil para testes ou se quiser desativar temporariamente)
   ]
 })
 export class ListaTarefasComponent implements OnInit {
